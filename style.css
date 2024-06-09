@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tiny5&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Bu yapı ile elemanın kapsayıcı dışına yönelimi engellendi.*/
+}
+
+.title {
+  background-color: rgb(208, 201, 201);
+  display: flex;
+  justify-content: center;
+  padding: 10px 5px;
+  font-size: 45px;
+  /* font-family: "Tiny5", sans-serif; */
+}
+
+body {
+  font-family: "Oswald", sans-serif;
+}
+
+p {
+  background-color: green;
+  width: 60%; /*Bir elemanın genişliğini belirlemek için kullanılır*/
+  /* margin=> Elemanın dış boşlugudur.*/
+  /* margin-top: 20px;
+  margin-left: 50px;
+  margin-bottom: 70px;
+  margin-right: 10px; */
+  margin: 20px 10px 70px 50px;
+  /* padding => Elemanın iç boşluğudur. */
+  padding: 10px 20px 30px 40px;
+}
+p:hover {
+  background-color: salmon;
+  color: blueviolet;
+  /* width: 100%;
+  height: 100vh; */
+}
+
+.kapsayıcı {
+  background-color: blueviolet;
+  margin: 30px 10px;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  /* flex-direction: ise flex yapısının yönünü belirler. row/row-reverse/column/column-reverse seçenekleri vardır.  */
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.kutu {
+  background-color: chocolate;
+  margin-top: 5px;
+}
+/* 
+* Display:flex ile esnek yapıya kavuşan elemanlarıjustif-content ile hizalama yapabiliriz.
+
+
+start ==> Varsayılan olarak gelen yapıdır.Sol kısımdan elemanları başlatarak sıralar.
+
+center ==> Elemanları kapsayıcı içerisinde orta kısıma hizalar.
+
+end ==> Elemanların bitişini  sağ kısıma hizalar. 
+
+space-between ==> Elemanlardan birinci ve sonuncuyu en baş ve en son kısıma gelecek şekilde hizalar.
+
+space-around ==> Space-betweenden farklı olarak bu elemanları en sol ve en sağdan belirli boşluk bırakarak hizalar.
+
+space-evenly ==> Kapsayıcı içerisindeki elemanları aralarında eşit boşluk bırakarak hizalar.
+
+
+*/
+
+.container {
+  background-color: cadetblue;
+  margin: 20px 30px;
+  padding: 10px 15px;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.box {
+  background-color: bisque;
+  margin-top: 10px;
+  padding: 5px;
+}
+.box:first-child {
+  background-color: aqua;
+}
+.box:last-child {
+  background-color: brown;
+}
+
+.box:nth-child(3) {
+  background-color: coral;
+  /* font-size: 40px; */
+}
+
+.box:nth-child(2) {
+  background-color: lime;
+  /* width: 100px;
+  height: 200px; */
+}
+
+.box:hover {
+  background-color: rosybrown;
+}
+
+/*
+
+ Sözde seçiciler denilen yapı css içerisinde önemli yere sahiptir.
+ Bir grup içerisinde yer alana elemanlardan birinciyi yada sonuncuyu seçmek hatta bu yapı içerisinde yeralan 3. 4. 6. 8. elemanlara erişmek isteyebiliriz.
+
+ Bu noktada yardımımıza :first-child / :last-child / :nth-child() yetişir.
+
+:first-child ==> yapı içerisindeki ilk elemana erişmek için kullanılır.
+
+:last-child ==> yapı içerisindeki son elemana erişmek için kullanılır.
+
+
+:nth-child() ==> () içerisinde verilen elemana erişmek için kullanılır.
+*/
+
+.resim-container {
+  width: 100%;
+  height: 500px;
+  background-image: url("./resim.png"); /* Kapsayıcı içerisinde resim kullanıldığı gibi kapsayıcının arka planı resim olarak ayarlanabilir*/
+  background-repeat: no-repeat; /* Bu resimin boyutu kapsayıcının boyutundan küçük geldiği durumda resim yapıyı doldurmak için tekrar girer.Bunu bu şekilde engelleriz.*/
+  background-size: cover; /* Resimi kapsayıcının tamamına yaymak için kullanılır.*/
+}
+
+/* Media Etiketleri  */
+
+@media (max-width: 1000px) {
+  .title {
+    background-color: black;
+    color: white;
+  }
+  .resim-container {
+    width: 50%;
+    height: 200px;
+  }
+}
